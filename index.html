@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<form name="calculator" onsubmit="return calculate();">
+			<input id="field" type="text" />
+			<input type="submit", value="Calculate" />
+		</form>
+	</body>
+	<script type="text/javascript">
+		function calculate()
+		{
+			let str = document.getElementById('field').value;
+			
+			alert(str);
+		}
+	</script>
+</html>
