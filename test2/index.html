@@ -5,12 +5,14 @@
 			<input type="submit", value="Calculate" />
 		</form>
 	</body>
+
+	<script src="calculator.js"></script>
 	<script type="text/javascript">
 		function calculate()
 		{
 			let str = document.getElementById('field').value;
 			
-			alert(str);
+			alert(Module.calculator(str));
 		}
 	</script>
 </html>

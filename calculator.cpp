@@ -51,8 +51,16 @@ std::string calculator(std::string str) {
 	}
 	ss << new_str;
 	for (std::string el; std::getline(ss, el, ' '); )
-		arr.push_back(el);
+	{
+		if (el != "")
+			arr.push_back(el);
+	}
 	if (error_check(nums, signs, error, arr))
 		return "Error: " + error;
 	return calculation(nums, arr[1]);
 }
+
+EMSCRIPTEN_BINDINGS(my_module) {
+	emscripten::function("calculator", &calculator);
+}
+

@@ -1,0 +1,27 @@
+Linux:
+
+# Download and install the latest SDK tools.
+./emsdk install latest
+
+# Make the "latest" SDK "active" for the current user. (writes .emscripten file)
+./emsdk activate latest
+
+# Activate PATH and other environment variables in the current terminal
+source ./emsdk_env.sh
+
+WINDOWS:
+
+# Download and install the latest SDK tools.
+emsdk install latest
+
+# Make the "latest" SDK "active" for the current user. (writes .emscripten file)
+emsdk activate latest
+
+# Activate PATH and other environment variables in the current terminal
+emsdk_env.bat
+
+test1:
+emcc calculator.cpp main.cpp -s WASM=1 -o test1/hello.html
+
+test2:
+emcc --bind -o test2/calculator.js calculator_in_one.cpp

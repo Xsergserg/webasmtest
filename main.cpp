@@ -1,14 +1,15 @@
 #include "calculator.h"
 
 int main(){
-	std::cout << calculator("25+25") << std::endl;
-	std::cout << calculator("25-15") << std::endl;
-	std::cout << calculator("25*25.5") << std::endl;
-	std::cout << calculator("25/25") << std::endl;
-	std::cout << calculator("25/0") << std::endl;
-	std::cout << calculator("2525") << std::endl;
-	std::cout << calculator("25df+25") << std::endl;
-	std::cout << calculator("df+25") << std::endl;
+	std::string str;
 
+	while (1)
+	{
+		std::cout << "Input your example (\"exit\" for finish session): " << std::endl;
+		std::getline(std::cin, str);
+		if (str == "exit")
+			return (0);
+		std::cout << calculator(str) << std::endl;
+	}
 	return (0);
 }
